@@ -48,6 +48,8 @@ class Update(TelegramObject):
                  update_id,
                  message=None,
                  edited_message=None,
+                 channel_post=None,
+                 edited_channel_post=None,
                  inline_query=None,
                  chosen_inline_result=None,
                  callback_query=None,
@@ -57,6 +59,8 @@ class Update(TelegramObject):
         # Optionals
         self.message = message
         self.edited_message = edited_message
+        self.channel_post = channel_post
+        self.edited_channel_post = edited_channel_post
         self.inline_query = inline_query
         self.chosen_inline_result = chosen_inline_result
         self.callback_query = callback_query
@@ -76,6 +80,8 @@ class Update(TelegramObject):
 
         data['message'] = Message.de_json(data.get('message'), bot)
         data['edited_message'] = Message.de_json(data.get('edited_message'), bot)
+        data['channel_post'] = Message.de_json(data.get('channel_post'), bot)
+        data['edited_channel_post'] = Message.de_json(data.get('edited_channel_post'), bot)
         data['inline_query'] = InlineQuery.de_json(data.get('inline_query'), bot)
         data['chosen_inline_result'] = ChosenInlineResult.de_json(
             data.get('chosen_inline_result'), bot)

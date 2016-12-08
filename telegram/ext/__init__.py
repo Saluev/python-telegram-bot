@@ -33,6 +33,7 @@ from .stringcommandhandler import StringCommandHandler
 from .stringregexhandler import StringRegexHandler
 from .typehandler import TypeHandler
 from .conversationhandler import ConversationHandler
+from .channelposthandler import ChannelPostHandler
 
 __all__ = ('Dispatcher', 'JobQueue', 'Job', 'Updater', 'CallbackQueryHandler',
            'ChosenInlineResultHandler', 'CommandHandler', 'Handler', 'InlineQueryHandler',
